@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>企业发布</title>
+  <script type="text/javascript" src="../static/jsp/lx.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/lx.css">
+  <style>
+
+    .box{
+      width: 800px;
+      height: 500px;
+      border: solid 1px #ddd;
+      position: absolute;
+      left: 30%;
+      top:38%;
+      margin-left: -195px;
+      margin-top: -160px;
+      text-align: center;
+      background: #FFF url("./png/png3.jpg");
+    }
+
+    .box h3{
+      font-weight: normal;
+      margin-bottom: 0;
+      color:#666;
+      font-size: 12px;
+      margin-left: 250px;
+      line-height: 40px;
+      width: 300px;
+      overflow: hidden;
+      text-align: center;
+      background:aliceblue;
+    }
+
+    #bbox{
+      width: 300px;
+      height: 25px;
+    }
+
+    .input_box{
+      width:300px;
+      height: 300px;
+      padding-bottom: 0px;
+      text-align: left;
+      vertical-align:top;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+  </style>
+
+</head>
+<body background="./png/png2.jpg">
+<div class="box">
+
+  <h3><b>请选择您的发布类别</b></h3>
+  <select id="bbox">
+    <option value ="code">开发</option>
+    <option value ="test">测试</option>
+    <option value="product">产品</option>
+    <option value="sales">销售</option>
+  </select>
+
+<br>
+  <br>
+  <br>
+
+  <!--  输入框，发布任务和考评方案-->
+<input type="text" name="user" placeholder="请发布任务和考评方案" class="input_box">
+<br>
+  <br>
+  <br>
+
+  <!-- 点击提交审核-->
+  <button onclick="alertTips()" class="btn btn-primary" >提交审核</button>&nbsp&nbsp&nbsp&nbsp;
+  <a href="test03.html">企业受理</a>
+</div>
+</body>
+<script>
+  function alertTips() {
+    window.alert("提交审核成功！");
+  }
+
+</script>
+</html>
