@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>欢迎您，请先登陆！</title>
+  <script type="text/javascript" src="../static/jsp/lx.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/lx.css">
+  <style>
+
+    .box{
+      width: 390px;
+      height: 320px;
+      border: solid 1px #ddd;
+      position: absolute;
+      left: 50%;
+      top:42%;
+      margin-left: -195px;
+      margin-top: -160px;
+      text-align: center;
+      background: #FFF url("./png/bluesky.jpg");
+    }
+    .box h3{
+      font-weight: normal;
+      color:#666;
+      font-size: 12px;
+      margin-left: 130px;
+      line-height: 30px;
+      width: 100px;
+      overflow: hidden;
+      text-align: center;
+      background:whitesmoke;
+    }
+
+    #bbox{
+      width:188px;
+      height: 25px;
+      margin-bottom: 19px;
+    }
+
+    .box h2{
+      font-weight: normal;
+      color:#666;
+      font-size: 16px;
+      line-height: 20px;
+      overflow: hidden;
+      text-align: center;
+      border-bottom: solid 1px #ddd;
+      background: #f7f7f7;
+    }
+
+    .input_box{
+      width:350px;
+      padding-bottom: 15px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+  </style>
+
+</head>
+<body background="./png/png2.jpg">
+<div class="box">
+  <h2>欢迎来到人才服务社交平台！</h2>
+  <br>
+  <h3>请先选择您的身份</h3>
+  <br>
+  <select id="bbox">
+    <option value ="student">学生</option>
+    <option value ="worker">职场人</option>
+    <option value="school">学校</option>
+    <option value="company">公司</option>
+  </select>
+  <script>
+    function fnLogin() {
+      const oUname = document.getElementById("uname");
+      const oPass = document.getElementById("pass");
+      const oError = document.getElementById("error_box");
+      let isError = true;
+      if (oUname.value.length > 20 || oUname.value.length < 6) {
+        oError.innerHTML = "用户名请输入6-20位字符";
+        isError = false;
+        return;
+      }else for(let i=0; i<oUname.value.charCodeAt(i); i++){
+        if((oUname.value.charCodeAt(i)<48)||(oUname.value.charCodeAt(i)>57) && (oUname.value.charCodeAt(i)<97)||(oUname.value.charCodeAt(i)>122)){
+          oError.innerHTML = "必须为字母跟数字组成";
+          return;
+        }
+      }
+      if (oPass.value.length > 20 || oPass.value.length < 6) {
+        oError.innerHTML = "密码请输入6-20位字符"
+        isError = false;
+        return;
+      }
+      window.alert("注册成功")
+    }
+  </script>
+
+  <div class="input_box">
+    <input id="uname" type="text" name="user" placeholder="请输入用户名">
+  </div>
+  <div class="input_box">
+    <input id="pass" type="password" name="psw" placeholder="请输入密码">
+  </div>
+  <div class="input_box">
+    <!--    点击登录-->
+    <button type="button" class="btn btn-primary" onclick="fnLogin()">注册</button>&nbsp&nbsp&nbsp&nbsp
+    <!--    点击跳转进入注册页面-->
+    <a href="test02.html"><input type="button" class="btn btn-info" name="register" value="登录"></a>
+  </div>
+</div>
+</body>
+</html>
+
